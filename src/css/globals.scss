@@ -1,0 +1,12 @@
+@function change_opacity($color, $opacity) {
+  $red: red($color);
+  $green: green($color);
+  $blue: blue($color);
+  $result: rgba($red, $green, $blue, $opacity);
+  @return $result;
+}
+
+
+$primary-color: #97bad0;
+$primary-color-dull: change_opacity($primary-color, .7);
+$primary-color-danger:red;

@@ -1,0 +1,43 @@
+@use "./css/globals";
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  color:unset;
+}
+img{
+  width: 100%;
+}
+ul,
+li,
+ol{
+  list-style: none;
+}
+.btn{
+  padding: .7rem;
+  background-color: globals.$primary-color;
+  border-radius: .8rem;
+  transition: 100ms ease-in-out;
+  align-self: center;
+}
+
+.btn:hover{
+  scale: 101%;
+  transform: translateY(-2%);
+  box-shadow:0 .4rem .1rem -.1rem rgba(255, 245, 238, .3) ;
+}
+
+.contain{
+  padding: 1.3rem;
+}

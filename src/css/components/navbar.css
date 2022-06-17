@@ -1,0 +1,92 @@
+.navbar {
+  background: #97bad0;
+  position: sticky;
+  top: 0;
+  transition: opacity 300ms ease-in-out;
+}
+.navbar:hover {
+  opacity: 1 !important;
+}
+.navbar .navbar-con {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar #nav-toggle {
+  display: none;
+}
+.navbar #nav-toggle:checked + .nav-items-con {
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.navbar .nav-items-con {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  position: absolute;
+  background-color: #97bad0;
+  left: -100%;
+  right: 100%;
+  height: 100vh;
+  transition-property: left, right;
+  transition: 250ms ease-in-out;
+}
+.navbar .nav-items-con a {
+  display: block;
+  text-align: center;
+  width: 90%;
+  position: relative;
+  padding: 1rem;
+  font-size: large;
+}
+.navbar .nav-btn {
+  padding: 0.6rem;
+  background-color: #97bad0;
+  border-radius: 0.8rem;
+  border: 0.2rem solid black;
+}
+.navbar .nav-btn:is(:hover) {
+  border-color: grey;
+}
+.navbar .nav-btn .logout-btn {
+  color: red;
+}
+.navbar .logout-btn {
+  color: red;
+}
+.navbar .logout-btn:hover {
+  background-color: red;
+  color: white;
+}
+
+@media screen and (min-width: 900px) {
+  .nav-toggle-con {
+    padding: 1rem;
+  }
+  .nav-toggle-con label {
+    display: none;
+  }
+  .nav-toggle-con input {
+    display: none;
+  }
+  .nav-toggle-con .nav-items-con {
+    all: unset;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 0.6rem;
+  }
+  .nav-toggle-con .nav-items-con a {
+    font-size: initial;
+    display: initial;
+    padding: 0.7rem;
+  }
+}
+.active {
+  background-color: teal !important;
+}
+
+/*# sourceMappingURL=navbar.css.map */

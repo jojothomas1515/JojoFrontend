@@ -1,0 +1,53 @@
+.intro {
+  min-height: 27rem;
+  background-image: url("../../../public/knuckle.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.intro .intro-con {
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  min-height: inherit;
+  color: whitesmoke;
+  padding: 1rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.intro .intro-con .intro-header {
+  color: #97bad0;
+  font-size: xx-large !important;
+}
+.intro .intro-con .btn {
+  background-color: rgba(151, 186, 208, 0.7);
+}
+.intro .intro-con .btn:hover {
+  background-color: #97bad0;
+}
+
+.posts-feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, max-content));
+  gap: 1rem;
+  justify-content: space-around;
+}
+.posts-feed .card {
+  max-width: 30rem;
+  min-width: 20rem;
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  background-color: #97bad0;
+  text-align: center;
+}
+.posts-feed .card img {
+  max-width: calc(100% - 3rem);
+  min-width: calc(100% - 7rem);
+  border-radius: 0.4rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+/*# sourceMappingURL=Home.css.map */

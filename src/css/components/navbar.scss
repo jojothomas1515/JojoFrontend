@@ -1,0 +1,119 @@
+@use "../globals";
+
+.navbar {
+  background: globals.$primary-color;
+  position: sticky;
+  top: 0;
+  transition: opacity 300ms ease-in-out;
+
+  &:hover {
+    opacity: 1 !important;
+  }
+
+  .navbar-con {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  // toggler
+  #nav-toggle {
+    display: none;
+  }
+
+  #nav-toggle:checked + .nav-items-con {
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .nav-items-con {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    position: absolute;
+    background-color: (globals.$primary-color);
+    left: -100%;
+    right: +100%;
+    height: 100vh;
+    transition-property: left, right;
+    transition: 250ms ease-in-out;
+
+
+    a {
+      display: block;
+      text-align: center;
+      width: 90%;
+      position: relative;
+      padding: 1rem;
+      font-size: large;
+
+    }
+  }
+
+
+  // button looks and hover effect
+  .nav-btn {
+    padding: .6rem;
+    background-color: globals.$primary-color;
+    border-radius: .8rem;
+    border: .2rem solid black;
+
+    &:is(:hover) {
+      //background-color: seashell;
+      border-color: grey;
+    }
+
+
+
+    .logout-btn {
+      color: globals.$primary-color-danger;
+    }
+  }
+
+  .logout-btn {
+    color: globals.$primary-color-danger;
+
+    &:hover {
+      background-color: globals.$primary-color-danger;
+      color: white;
+    }
+  }
+
+}
+
+@media screen and (min-width: 900px) {
+  .nav-toggle-con {
+    padding: 1rem;
+
+    label {
+      display: none;
+    }
+
+    input {
+      display: none;
+    }
+
+    .nav-items-con {
+      all: unset;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      gap: .6rem;
+
+      a {
+        font-size: initial;
+        display: initial;
+        padding: .7rem;
+      }
+    }
+  }
+
+}
+
+.active {
+  background-color: teal !important;
+}
