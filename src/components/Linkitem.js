@@ -4,7 +4,7 @@ import {Link, useResolvedPath, useMatch} from "react-router-dom";
 
 function Linkitem({name, href, classes = ""}) {
     const resolvedPath = useResolvedPath(href)
-    const isActive = useMatch({path:resolvedPath.pathname, end:true})
+    const isActive = useMatch({path:`${resolvedPath.pathname}/*`, end:true})
     console.log(resolvedPath)
 
     return (
