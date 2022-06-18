@@ -14,14 +14,14 @@
     text-align: center;
 
     img {
-      max-width: calc(100% - 3rem);
-      min-width: calc(100% - 7rem);
+      width: 10rem;
       border-radius: .4rem;
       aspect-ratio: 1/1;
       object-fit: cover;
     }
 
     .card-body {
+
     }
   }
 }

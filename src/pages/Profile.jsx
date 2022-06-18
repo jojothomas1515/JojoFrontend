@@ -3,6 +3,7 @@ import {Route, Routes} from "react-router-dom";
 import Linkitem from "../components/Linkitem";
 import '../css/pages/profile.css'
 import Posts from "../components/Posts";
+import Addpost from "../components/AddPost";
 
 function Profile(props) {
 
@@ -13,8 +14,8 @@ function Profile(props) {
                 <div className="p-img-con"><img src={require('../images/pages/cool.jpg')} alt="" className="p-img"/>
                 </div>
                 <p className="p-fname">Joseph Thomas</p>
-                <p className="p-email">Jojothomas1515@gmail.com</p>
-                <p className="p-birthday">Sep 9 1998</p>
+                <p className="p-email">Jojothomas@example.com</p>
+                <p className="p-birthday">Sep 9 1990</p>
             </section>
             <div className={'p-links'}>
                 <Linkitem href={`/`} name={'Posts'} wildcard={false} classes={'btn'}></Linkitem>
@@ -24,7 +25,7 @@ function Profile(props) {
             <div>
                 <Routes>
                     <Route path={'/'} element={<Posts/>}/>
-                    <Route path={'addpost'}/>
+                    <Route path={'addpost'} element={<Addpost/>}/>
                     <Route path={'edit'}/>
 
                 </Routes>

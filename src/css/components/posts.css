@@ -13,8 +13,7 @@
   text-align: center;
 }
 .posts-feed .card img {
-  max-width: calc(100% - 3rem);
-  min-width: calc(100% - 7rem);
+  width: 10rem;
   border-radius: 0.4rem;
   aspect-ratio: 1/1;
   object-fit: cover;
