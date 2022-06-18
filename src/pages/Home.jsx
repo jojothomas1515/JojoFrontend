@@ -1,22 +1,9 @@
 import '../css/pages/Home.css'
 import {Link} from "react-router-dom";
-import {useEffect, useState} from "react";
 import Posts from "../components/Posts";
 
 export const Home = () => {
-    const [posts, setPosts] = useState([])
 
-
-    async function fetch_post(link) {
-        const res = await fetch(link)
-        const data = await res.json()
-        setPosts([...data]);
-
-    }
-
-    useEffect(() => {
-        fetch_post("http://192.168.9.101/")
-    }, [])
     return (
         <>
             <section className={'intro'}>
@@ -32,15 +19,8 @@ export const Home = () => {
                     <Link to={'about/'} className={'btn'} style={{width: "max-content"}}>Learn More</Link>
                 </div>
             </section>
-            <section className="posts-feed contain">
+            <Posts/>
 
-                {posts.map(post => {
-                    return (
-                        <Posts post={post}/>
-                    );
-                })}
-
-            </section>
         </>
 
     )

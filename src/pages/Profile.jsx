@@ -1,34 +1,36 @@
 import React from 'react';
-import {Routes, Route} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import Linkitem from "../components/Linkitem";
-import Addpost from "./Addpost";
+import '../css/pages/profile.css'
+import Posts from "../components/Posts";
 
 function Profile(props) {
 
+
     return (
         <>
-            <section className={'profile'}>
-                <div className="profile">
-                    <div className="p-img-con"><img src={require('../images/pages/cool.jpg')} alt="" className="p-img"/></div>
-                    <p className="p-fname">Joseph Thomas</p>
-                    <p className="p-email">Jojothomas1515@gmail.com</p>
-                    <p className="p-birthday">Sep 9 1998</p>
+            <section className={'profile contain'}>
+                <div className="p-img-con"><img src={require('../images/pages/cool.jpg')} alt="" className="p-img"/>
                 </div>
-                <div className={'p-links'}>
-                    <Linkitem href={`posts`} name={'Posts'}></Linkitem>
-                    <Linkitem href={`settings`} name={'Settings'}></Linkitem>
-                    <Linkitem href={`edit`} name={'Edit'}></Linkitem>
-                </div>
-                <div>
-                    <Routes>
-                        <Route path={'posts'}> Hello jojo</Route>
-                        <Route path={'settings'}> Hello jojo</Route>
-                        <Route path={'edit'}> Hello jojo</Route>
-
-                    </Routes>
-                </div>
-
+                <p className="p-fname">Joseph Thomas</p>
+                <p className="p-email">Jojothomas1515@gmail.com</p>
+                <p className="p-birthday">Sep 9 1998</p>
             </section>
+            <div className={'p-links'}>
+                <Linkitem href={`/`} name={'Posts'} wildcard={false} classes={'btn'}></Linkitem>
+                <Linkitem href={`addpost`} name={'Add Post'} classes={'btn'}></Linkitem>
+                <Linkitem href={`edit`} name={'Edit Info'} classes={'btn'}></Linkitem>
+            </div>
+            <div>
+                <Routes>
+                    <Route path={'/'} element={<Posts/>}/>
+                    <Route path={'addpost'}/>
+                    <Route path={'edit'}/>
+
+                </Routes>
+            </div>
+
+
         </>
     );
 }

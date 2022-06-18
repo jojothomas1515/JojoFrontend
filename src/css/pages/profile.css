@@ -1,0 +1,28 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 3rem;
+  background-color: rgba(151, 186, 208, 0.7);
+  line-height: 0.2;
+}
+.profile .p-img-con {
+  overflow: hidden;
+  border-radius: 0.4rem;
+  width: 10rem;
+}
+.profile .p-img-con > * {
+  border-radius: inherit;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.p-links {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem;
+  background-color: #97bad0;
+}
+
+/*# sourceMappingURL=profile.css.map */

@@ -1,0 +1,27 @@
+@use "../globals";
+.posts-feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, max-content));
+  gap: 1rem;
+  justify-content: space-around;
+
+  .card {
+    max-width: 30rem;
+    min-width: 20rem;
+    padding: .7rem;
+    border-radius: .4rem;
+    background-color: globals.$primary-color;
+    text-align: center;
+
+    img {
+      max-width: calc(100% - 3rem);
+      min-width: calc(100% - 7rem);
+      border-radius: .4rem;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+
+    .card-body {
+    }
+  }
+}

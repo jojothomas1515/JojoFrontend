@@ -1,0 +1,23 @@
+.posts-feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, max-content));
+  gap: 1rem;
+  justify-content: space-around;
+}
+.posts-feed .card {
+  max-width: 30rem;
+  min-width: 20rem;
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+  background-color: #97bad0;
+  text-align: center;
+}
+.posts-feed .card img {
+  max-width: calc(100% - 3rem);
+  min-width: calc(100% - 7rem);
+  border-radius: 0.4rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+/*# sourceMappingURL=posts.css.map */

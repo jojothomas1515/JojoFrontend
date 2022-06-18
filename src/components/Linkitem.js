@@ -2,13 +2,13 @@ import React from 'react';
 import {Link, useResolvedPath, useMatch} from "react-router-dom";
 
 
-function Linkitem({name, href, classes = ""}) {
+function Linkitem({name, href, classes = "", wildcard=true}) {
     const resolvedPath = useResolvedPath(href)
-    const isActive = useMatch({path:`${resolvedPath.pathname}/*`, end:true})
+    const isActive = useMatch({path:`${resolvedPath.pathname}/${wildcard ? '*':''}`, end:true})
     console.log(resolvedPath)
 
     return (
-        <li><Link to={href} className={`nav-btn ${classes} ${isActive ? 'active':''}`}>{name}</Link></li>
+        <li><Link to={href} className={`${classes} ${isActive ? 'active':''}`}>{name}</Link></li>
 
     );
 }

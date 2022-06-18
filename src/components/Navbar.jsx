@@ -32,11 +32,11 @@ function Navbar(props) {
                     <label for={'nav-toggle'}><FontAwesomeIcon icon={faNavicon} className={'fa-2x'}/></label>
                     <input type={'checkbox'} id={'nav-toggle'} className={'nav-toggle'}/>
                     <ul className={'nav-items-con'}>
-                        <Linkitem href={'/'} name={'Home'}/>
-                        <Linkitem href={'/profile/'} name={'Profile'}/>
-                        <Linkitem href={'/addpost/'} name={'Add Post'}/>
-                        <Linkitem href={'/about/'} name={'About'}/>
-                        <Linkitem href={'/info/'} name={<FontAwesomeIcon icon={faDoorOpen}/>} classes={"logout-btn"}/>
+                        <Linkitem href={'/'} name={'Home'} classes={'nav-btn'}/>
+                        <Linkitem href={'/profile/'} name={'Profile'} classes={'nav-btn'}/>
+                        <Linkitem href={'/addpost/'} name={'Add Post'} classes={'nav-btn'}/>
+                        <Linkitem href={'/about/'} name={'About'} classes={'nav-btn'}/>
+                        <Linkitem href={'/info/'} name={<FontAwesomeIcon icon={faDoorOpen}/>} classes={"nav-btn logout-btn"}/>
 
 
                     </ul>
