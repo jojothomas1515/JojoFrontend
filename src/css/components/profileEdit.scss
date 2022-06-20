@@ -1,0 +1,35 @@
+@use "../globals";
+.edit-profile{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: none;
+  justify-content: center;
+  background-color: globals.$primary-color-dull;
+
+  >form{
+    padding:2rem;
+    background-color: globals.$primary-color;
+    border-radius: .4rem;
+    box-shadow: 0 0 .2rem black;
+    width: 350px;
+    height: max-content;
+
+
+    div{
+    display: flex;
+      flex-direction: column;
+      gap: .3rem;
+      margin: .4rem auto;
+      padding: .3rem;
+      border-bottom: .1rem solid black;
+      input[type=email], input[type=text]{
+        border: none;
+      }
+
+    }
+  }
+}

@@ -15,7 +15,7 @@ function Posts(props) {
     }
 
     useEffect(() => {
-        fetch_post("http://192.168.9.101/")
+        fetch_post(`${process.env.REACT_APP_API}`)
     }, [])
     return (
         <section className="posts-feed contain">

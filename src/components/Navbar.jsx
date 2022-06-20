@@ -27,7 +27,7 @@ function Navbar(props) {
 
         <div className={'navbar'}>
             <div className={'navbar-con'}>
-                <h3>Logo Here</h3>
+                <h3>{process.env.REACT_APP_LOGO_TITLE}</h3>
                 <div className={'nav-toggle-con'}>
                     <label for={'nav-toggle'}><FontAwesomeIcon icon={faNavicon} className={'fa-2x'}/></label>
                     <input type={'checkbox'} id={'nav-toggle'} className={'nav-toggle'}/>

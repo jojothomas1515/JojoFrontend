@@ -1,14 +1,21 @@
-import React from 'react';
-
+import React, {useRef} from 'react';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faImage} from "@fortawesome/free-solid-svg-icons";
 
 function AddPost(props) {
+    
     return (
         <div className={'addpost-form-con'} enctype={'multipart/form-data'}>
             <form>
-                <input type={'text'} name={'heading'}/>
-                <div style={{height:'25rem', width:'calc(100% - 4rem)',fontSize:'2rem', margin:'1rem auto', backgroundColor:"seagreen"}} contentEditable={true}/>
-                <input type={'file'} accept={'image/*'} name={'cover_image'}/>
-                <input type={"submit"}/>
+                <div><label htmlFor={'title'}>Title</label>
+                    <input id={'title'} type={'text'}/></div>
+                <div><label htmlFor={'summary'}>Summary</label>
+                    <input id={'summary'} type={'text'}/></div>
+                <div><label htmlFor={'cover_image'}>Cover Image {<FontAwesomeIcon icon={faImage}/>}</label>
+                    <input id={'cover_image'} style={{display: 'none'}} type={'file'} accept={'image/*'}/></div>
+                <div><input type={'submit'} value={'Post'}/></div>
+
+
             </form>
         </div>
     );

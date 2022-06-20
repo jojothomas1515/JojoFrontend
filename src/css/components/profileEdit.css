@@ -1,0 +1,32 @@
+.edit-profile {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: none;
+  justify-content: center;
+  background-color: rgba(151, 186, 208, 0.7);
+}
+.edit-profile > form {
+  padding: 2rem;
+  background-color: #97bad0;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 0.2rem black;
+  width: 350px;
+  height: max-content;
+}
+.edit-profile > form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin: 0.4rem auto;
+  padding: 0.3rem;
+  border-bottom: 0.1rem solid black;
+}
+.edit-profile > form div input[type=email], .edit-profile > form div input[type=text] {
+  border: none;
+}
+
+/*# sourceMappingURL=profileEdit.css.map */

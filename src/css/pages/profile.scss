@@ -9,6 +9,18 @@
   padding-top: 3rem;
   background-color: globals.$primary-color-dull;
   line-height: .2;
+  > div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    align-items: center;
+    line-height: .2;
+  }
+  .edit-prof-btn{
+    align-self: flex-end;
+    position: absolute;
+  }
+
   .p-img-con{
     overflow: hidden;
     border-radius: .4rem;

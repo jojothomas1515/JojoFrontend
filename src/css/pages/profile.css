@@ -7,6 +7,17 @@
   background-color: rgba(151, 186, 208, 0.7);
   line-height: 0.2;
 }
+.profile > div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  line-height: 0.2;
+}
+.profile .edit-prof-btn {
+  align-self: flex-end;
+  position: absolute;
+}
 .profile .p-img-con {
   overflow: hidden;
   border-radius: 0.4rem;
