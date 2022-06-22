@@ -1,10 +1,11 @@
 import React from 'react';
+import AddPost from "../components/AddPost";
 
 function Addpost(props) {
     return (
-        <div>
-            <h1>This is the add post page</h1>
-        </div>
+        <>
+            <AddPost/>
+        </>
     );
 }
 

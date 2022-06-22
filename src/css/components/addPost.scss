@@ -1,0 +1,13 @@
+@use "../globals";
+.addpost-form-con{
+  padding: 1rem;
+.form-control{
+  display: flex;
+  flex-direction: column;
+}
+  .btn{
+    display: block;
+    width: 100% !important;
+    background-color: globals.$accent-color ;
+  }
+}

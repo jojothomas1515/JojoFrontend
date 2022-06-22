@@ -5,6 +5,24 @@
   gap: 1rem;
   justify-content: space-around;
 
+  .profile-icon-con{
+    display: flex;
+    align-items: center;gap: 1rem;
+    padding: 0 .9rem;
+    background-color: globals.$accent-color;
+    width: max-content;
+    border-radius: 2rem;
+
+    > img{
+      all:unset;
+      width: 2rem !important;
+      height: 2rem;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 1rem !important;
+    }
+  }
+
   .card {
     max-width: 30rem;
     min-width: 20rem;

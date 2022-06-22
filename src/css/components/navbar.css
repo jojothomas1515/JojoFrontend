@@ -3,6 +3,7 @@
   position: sticky;
   top: 0;
   transition: opacity 300ms ease-in-out;
+  z-index: 100;
 }
 .navbar:hover {
   opacity: 1 !important;

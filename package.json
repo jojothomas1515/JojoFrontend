@@ -22,7 +22,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "null": "HOST=192.168.9.100 PORT=80 react-scripts start",
+    "null": "HOST=192.168.9.100 PORT=80 react-scripts start : .env",
     "start": "react-scripts start : .env",
     "build": "react-scripts build",
     "test": "react-scripts test",

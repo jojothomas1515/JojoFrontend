@@ -4,6 +4,23 @@
   gap: 1rem;
   justify-content: space-around;
 }
+.posts-feed .profile-icon-con {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 0.9rem;
+  background-color: dodgerblue;
+  width: max-content;
+  border-radius: 2rem;
+}
+.posts-feed .profile-icon-con > img {
+  all: unset;
+  width: 2rem !important;
+  height: 2rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 1rem !important;
+}
 .posts-feed .card {
   max-width: 30rem;
   min-width: 20rem;

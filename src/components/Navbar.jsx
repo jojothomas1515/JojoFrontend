@@ -8,6 +8,9 @@ import Linkitem from "./Linkitem";
 
 
 function Navbar(props) {
+    function logout(){
+        localStorage.removeItem('accessToken')
+    }
     useEffect(e => {
         const navbar = document.querySelector('.navbar');
         const check_toggle = navbar.querySelector('#nav-toggle')
@@ -36,7 +39,7 @@ function Navbar(props) {
                         <Linkitem href={'/profile/'} name={'Profile'} classes={'nav-btn'}/>
                         <Linkitem href={'/addpost/'} name={'Add Post'} classes={'nav-btn'}/>
                         <Linkitem href={'/about/'} name={'About'} classes={'nav-btn'}/>
-                        <Linkitem href={'/info/'} name={<FontAwesomeIcon icon={faDoorOpen}/>} classes={"nav-btn logout-btn"}/>
+                        <button classes={"nav-btn logout-btn"} onClick={logout}><FontAwesomeIcon icon={faDoorOpen}/></button>
 
 
                     </ul>

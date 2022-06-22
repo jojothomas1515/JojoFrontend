@@ -1,5 +1,4 @@
-import React from 'react';
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from 'react';
 import Post from "./Post";
 import '../css/components/posts.css'
 
@@ -8,9 +7,17 @@ function Posts(props) {
 
 
     async function fetch_post(link) {
-        const res = await fetch(link)
-        const data = await res.json()
-        setPosts([...data]);
+        try {
+            const res = await fetch(link, {
+                headers: {
+                    "Authorization": `Bearer ${localStorage.getItem('accessToken')}`,
+                }
+            })
+            const data = await res.json()
+            setPosts([...data]);
+        } catch (e) {
+            console.log('error')
+        }
 
     }
 

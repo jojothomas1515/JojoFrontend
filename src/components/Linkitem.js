@@ -7,7 +7,7 @@ function Linkitem({name, href, classes = "", wildcard=true}) {
     const isActive = useMatch({path:`${resolvedPath.pathname}/${wildcard ? '*':''}`, end:true})
 
     return (
-        <li><Link to={href} className={`${classes} ${isActive ? 'active':''}`}>{name}</Link></li>
+        <li><Link to={href} className={`${classes} ${isActive ? 'active':''}`} >{name}</Link></li>
 
     );
 }
