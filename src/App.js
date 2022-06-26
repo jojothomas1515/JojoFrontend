@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import IsAuth from "./utilities/IsAuth";
 import Register from "./pages/Register";
 import Navbar from "./components/Navbar";
+import Profile from "./pages/Profile";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
                     <Navbar/>
                     <Routes>
                         <Route path={'/'} element={<Home/>} exact/>
+                        <Route path={'/profile'} element={<Profile/>}></Route>
                     </Routes>
                 </PrivateRoutes>
 

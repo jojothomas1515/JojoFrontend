@@ -1,0 +1,62 @@
+@use "../globals";
+
+.profile {
+  background-color: globals.$primary-color-dull;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  min-height: 100vh;
+
+
+
+  img{
+    border-radius: 1rem;
+    width: 10rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position:center;
+    cursor: pointer;
+  }
+
+  .edit-profile {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+  }
+}
+
+.profile-image-modal{
+  display: none;
+  z-index: 1000;
+  position: fixed;
+  top:0;
+  bottom:0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: globals.$primary-color;
+  align-items: center;
+  justify-content: center;
+
+.profile-image-modal-icon{
+
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+}
+
+  .img-con{
+    width: 80%;
+    position: relative;
+    border-radius: 2rem;
+    height: max-content;
+    img{
+      border-radius: 2rem;
+      width: 100%;
+    }
+  }
+
+}
