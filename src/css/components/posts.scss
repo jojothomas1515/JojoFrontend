@@ -1,20 +1,24 @@
 @use "../globals";
+
 .posts-feed {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, max-content));
   gap: 1rem;
   justify-content: space-around;
+  padding: .6rem;
+  box-shadow: globals.$shadow-minor-float inset;
 
-  .profile-icon-con{
+  .profile-icon-con {
     display: flex;
-    align-items: center;gap: 1rem;
-    padding: 0 .9rem;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 .5rem;
     background-color: globals.$accent-color;
     width: max-content;
     border-radius: 2rem;
 
-    > img{
-      all:unset;
+    > img {
+      all: unset;
       width: 2rem !important;
       height: 2rem;
       aspect-ratio: 1/1;
@@ -30,9 +34,10 @@
     border-radius: .4rem;
     background-color: globals.$primary-color;
     text-align: center;
+    box-shadow: globals.$shadow-minor-float;
 
     img {
-      width: 10rem;
+      width: 20rem;
       border-radius: .4rem;
       aspect-ratio: 1/1;
       object-fit: cover;

@@ -9,5 +9,9 @@
 
 $primary-color: #97bad0;
 $primary-color-dull: change_opacity($primary-color, .7);
-$primary-color-danger:red;
+$primary-color-danger: red;
+$primary-color-danger-dull: change_opacity($primary-color-danger, .7);
 $accent-color: dodgerblue;
+
+
+$shadow-minor-float : 0 0 .2rem black;

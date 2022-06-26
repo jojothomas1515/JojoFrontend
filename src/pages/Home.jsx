@@ -1,27 +1,25 @@
-import '../css/pages/Home.css'
-import {Link} from "react-router-dom";
+import React, {useContext} from 'react';
+import {AuthContext} from "../utilities/AuthContext";
 import Posts from "../components/Posts";
 
-export const Home = () => {
+import "../css/pages/Home.css";
 
+function Home(props) {
+    const {user} = useContext(AuthContext)
     return (
         <>
-            <section className={'intro'}>
-                <div className={'intro-con'}>
-                    <h1 className="intro-header">Welcome here</h1>
-                    <p className="intro-msg">
-
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut
-                        culpa cum distinctio excepturi, fuga hic id praesentium reiciendis similique veniam voluptate
-                        voluptates? Accusamus ad aliquam consequuntur cupiditate dolor, dolorem dolores earum eius
-                        eligendi fuga illum ipsam molestiae, nulla omnis, praesentium quae quia quibusdam repellat totam
-                        voluptate? Ex, molestias, voluptatem?</p>
-                    <Link to={'about/'} className={'btn'} style={{width: "max-content"}}>Learn More</Link>
+            <section className="intro container">
+                <div>
+                    <h1>My React Project</h1>
+                    <p>Just one react project,  to check out the repository</p>
+                    <a className={'btn'}>Click Here</a>
                 </div>
             </section>
-            <Posts/>
+                <Posts/>
+
 
         </>
-
-    )
+    );
 }
+
+export default Home;

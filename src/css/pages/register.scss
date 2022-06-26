@@ -1,13 +1,13 @@
-@use "../globals";
+@use '../globals';
 
-.login-con{
+.register-con{
   background-color: globals.$accent-color;
   display: grid;
   height: 100vh;
   place-content: center;
 
-  .login-form{
-    max-width: 25rem;
+  .register-form{
+    max-width: 30rem;
     height: max-content;
     padding: 2rem;
     background-color: globals.$primary-color;
@@ -24,6 +24,7 @@
       gap: .4rem;
       border-radius: .2rem;
       border:.1rem solid globals.$accent-color;
+      width: 100%;
       padding: .4rem;
 
       input{
@@ -35,3 +36,4 @@
     }
   }
 }
+

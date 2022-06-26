@@ -1,8 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Post from "./Post";
 import '../css/components/posts.css'
+import {AuthContext} from "../utilities/AuthContext";
 
 function Posts(props) {
+    const {accessToken} =  useContext(AuthContext)
     const [posts, setPosts] = useState([])
 
 
@@ -10,7 +12,7 @@ function Posts(props) {
         try {
             const res = await fetch(link, {
                 headers: {
-                    "Authorization": `Bearer ${localStorage.getItem('accessToken')}`,
+                    "Authorization": `Bearer ${accessToken}`,
                 }
             })
             const data = await res.json()

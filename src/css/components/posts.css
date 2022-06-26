@@ -3,12 +3,14 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, max-content));
   gap: 1rem;
   justify-content: space-around;
+  padding: 0.6rem;
+  box-shadow: 0 0 0.2rem black inset;
 }
 .posts-feed .profile-icon-con {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0 0.9rem;
+  padding: 0 0.5rem;
   background-color: dodgerblue;
   width: max-content;
   border-radius: 2rem;
@@ -28,9 +30,10 @@
   border-radius: 0.4rem;
   background-color: #97bad0;
   text-align: center;
+  box-shadow: 0 0 0.2rem black;
 }
 .posts-feed .card img {
-  width: 10rem;
+  width: 20rem;
   border-radius: 0.4rem;
   aspect-ratio: 1/1;
   object-fit: cover;
