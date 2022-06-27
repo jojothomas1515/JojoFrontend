@@ -17,17 +17,21 @@
   box-shadow: 0 0 0.2rem black;
 }
 .login-con .login-form .form-control {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+  display: flex;
+  width: 100%;
   gap: 0.4rem;
   border-radius: 0.2rem;
   border: 0.1rem solid dodgerblue;
   padding: 0.4rem;
 }
+.login-con .login-form .form-control label {
+  color: black;
+}
 .login-con .login-form .form-control input {
   border: none;
   outline: none;
   background-color: transparent;
+  color: black;
   font-size: 1.1rem;
 }
 
