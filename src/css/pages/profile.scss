@@ -62,8 +62,8 @@
 }
 
 .edit-profile-modal {
-  display: flex;
-  position: absolute;
+  display: none;
+  position: fixed;
   top:0;
   z-index: 1000;
   background-color: globals.$primary-color;

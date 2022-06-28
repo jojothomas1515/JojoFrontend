@@ -5,6 +5,7 @@ import {faClose, faImage, faUserEdit} from "@fortawesome/free-solid-svg-icons";
 import '../css/pages/profile.css';
 import {fetchUserInfo} from "../utilities/userInfo";
 import {AuthContext} from "../utilities/AuthContext";
+import Posts from "../components/Posts";
 
 function Profile(props) {
     const {accessToken} = useContext(AuthContext)
@@ -27,8 +28,9 @@ function Profile(props) {
         profileImageModalRef.current.style.display = 'none'
 
     }
-    function closeEditProfile(){
-        editProfileModalRef.current.style.display='none'
+
+    function closeEditProfile() {
+        editProfileModalRef.current.style.display = 'none'
     }
 
     function openEditProfile() {
@@ -37,23 +39,40 @@ function Profile(props) {
 
 
     function changeImage(e) {
+        e.preventDefault()
+        const formData = new FormData()
+        formData.append('profile_image', e.target.files[0])
         const file = new FileReader()
 
+        fetch(`${process.env.REACT_APP_API}/changepic`, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                "Authorization": `Bearer ${accessToken}`,
+
+            }
+
+        }).then(res => {
+            if(res.status == 200){
+                fetchUserInfo(accessToken, setProfileInfo)
+            }
+        })
         file.onload = (ev) => {
             pimRef.current.src = ev.target.result
         }
         file.readAsDataURL(e.target.files[0]
         )
+
     }
 
 
     return (
         <>
             <section className="contain profile">
-                <FontAwesomeIcon className={'btn edit-profile'}  icon={faUserEdit}
+                <FontAwesomeIcon className={'btn edit-profile'} icon={faUserEdit}
                                  onClick={openEditProfile}/>
                 <div>
-                    <img src={require('../images/pages/index.jpeg')} alt="profile image" onClick={openProfileImage}/>
+                    <img src={profileInfo.profile_image} alt="profile image" onClick={openProfileImage}/>
                 </div>
                 <div>
                     <p>{profileInfo.username}</p>
@@ -66,7 +85,7 @@ function Profile(props) {
             <section className={'profile-image-modal'} ref={profileImageModalRef}>
                 <FontAwesomeIcon icon={faClose} className={'btn profile-image-modal-icon'} onClick={closeProfileImage}/>
                 <div className={'img-con'}>
-                    <img src={require('../images/pages/cool.jpg')}/>
+                    <img src={profileInfo.profile_image}/>
                 </div>
             </section>
 
@@ -76,7 +95,7 @@ function Profile(props) {
 
                 <div className="edit-profile-con">
                     <div className={'pim-con'} style={{position: "relative"}}>
-                        <img src={require('../images/pages/index.jpeg')} alt="profile image" ref={pimRef}
+                        <img src={profileInfo.profile_image} alt="profile image" ref={pimRef}
                         />
                         <label htmlFor={'selectProfileImage'} style={{cursor: "pointer"}}><FontAwesomeIcon
                             icon={faImage}/></label>
@@ -101,6 +120,10 @@ function Profile(props) {
                 </div>
 
             </section>
+            <div style={{textAlign: "center"}}>
+                <h2>Your Posts</h2>
+            </div>
+            <Posts link={`${process.env.REACT_APP_API}/myposts`}/>
 
         </>
     );

@@ -3,7 +3,7 @@ import Post from "./Post";
 import '../css/components/posts.css'
 import {AuthContext} from "../utilities/AuthContext";
 
-function Posts(props) {
+function Posts({link}) {
     const {accessToken} =  useContext(AuthContext)
     const [posts, setPosts] = useState([])
 
@@ -24,7 +24,7 @@ function Posts(props) {
     }
 
     useEffect(() => {
-        fetch_post(`${process.env.REACT_APP_API}`)
+        fetch_post(link)
     }, [])
     return (
         <section className="posts-feed contain">

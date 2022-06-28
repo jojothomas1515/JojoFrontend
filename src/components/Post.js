@@ -12,7 +12,7 @@ function Post({post}) {
 
                 <h3 className="card-header">{post.heading}</h3>
                 <div className="card-body">
-                    <img src={`${process.env.REACT_APP_API}${post.cover_image}`} alt={'cool'}/>
+                    <img src={`${post.cover_image}`} alt={'cool'}/>
                     <p>{post.summary}</p>
                 </div>
                 <p className="card-footer"> {post.date}</p>
