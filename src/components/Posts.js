@@ -4,10 +4,21 @@ import '../css/components/posts.css'
 import {AuthContext} from "../utilities/AuthContext";
 
 function Posts({link}) {
-    const {accessToken} =  useContext(AuthContext)
+    const {accessToken, user} =  useContext(AuthContext)
     const [posts, setPosts] = useState([])
 
+    function deletePost(id){
+        fetch(`${process.env.REACT_APP_API}/removepost/${id}`, {
+            method:'DELETE',
+            headers:{
+                "Authorization": `Bearer ${accessToken}`,
 
+            }
+        }).then(res =>{
+            if(res.status=== 200 ) {alert("Post Deleted");fetch_post(link)}
+            else alert('failed')
+        })
+    }
     async function fetch_post(link) {
         try {
             const res = await fetch(link, {
@@ -26,11 +37,12 @@ function Posts({link}) {
     useEffect(() => {
         fetch_post(link)
     }, [])
+
     return (
         <section className="posts-feed contain">
             {posts.map(post => {
                 return (
-                    <Post post={post}/>
+                    <Post post={post} user={user} deletePost={deletePost} />
                 );
             })}
         </section>

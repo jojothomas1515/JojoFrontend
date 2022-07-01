@@ -23,7 +23,20 @@
   object-fit: cover;
   border-radius: 1rem !important;
 }
+.posts-feed .post-option {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.posts-feed .post-option > ul {
+  display: none;
+  position: absolute;
+  background-color: black;
+  padding: 1rem;
+  right: 0;
+}
 .posts-feed .card {
+  position: relative;
   max-width: 30rem;
   min-width: 20rem;
   padding: 0.7rem;

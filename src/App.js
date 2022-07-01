@@ -8,6 +8,7 @@ import IsAuth from "./utilities/IsAuth";
 import Register from "./pages/Register";
 import Navbar from "./components/Navbar";
 import Profile from "./pages/Profile";
+import Addpost from "./pages/Addpost";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
                     <Routes>
                         <Route path={'/'} element={<Home/>} exact/>
                         <Route path={'/profile'} element={<Profile/>}></Route>
+                        <Route path={'/addpost'} element={<Addpost/>}/>
                     </Routes>
                 </PrivateRoutes>
 

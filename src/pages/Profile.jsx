@@ -53,7 +53,7 @@ function Profile(props) {
             }
 
         }).then(res => {
-            if(res.status == 200){
+            if (res.status == 200) {
                 fetchUserInfo(accessToken, setProfileInfo)
             }
         })
@@ -62,6 +62,30 @@ function Profile(props) {
         }
         file.readAsDataURL(e.target.files[0]
         )
+
+    }
+
+    function changeInfo(e) {
+        e.preventDefault()
+        const firstname = e.target.firstname.value
+        const lastname = e.target.lastname.value
+        const data = JSON.stringify({firstname: firstname, lastname: lastname})
+        fetch(`${process.env.REACT_APP_API}/changeinfo`, {
+            method: "POST",
+            body:data,
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${accessToken}`,
+            },
+        }).then(res=>{
+            if (res.status === 200){
+                fetchUserInfo(accessToken, setProfileInfo)
+                e.target.firstname.value =""
+                e.target.lastname.value =""
+                alert("Info Updated")
+            }
+        })
+
 
     }
 
@@ -103,14 +127,17 @@ function Profile(props) {
                                onChange={changeImage}/>
 
                     </div>
-                    <form>
+                    <form onSubmit={changeInfo}>
 
                         <div className={"form-con"}>
-                            <div className={'form-control'}><input type={"text"} placeholder={'First Name'}
-                                                                   value={profileInfo.firstname}/>
+                            <div className={'form-control'}><input type={"text"}
+                                                                   name={'firstname'} placeholder={profileInfo.firstname}
+                                                                   />
                             </div>
                             <div className={'form-control'}>
-                                <input type={"text"} placeholder={'Last Name'} value={profileInfo.lastname}/>
+                                <input type={"text"} placeholder={profileInfo.lastname}
+
+                                       name={'lastname'}/>
                             </div>
                             <div><input className={'btn'} type={'submit'} value={'Update Info'}/></div>
 
