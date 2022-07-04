@@ -36,6 +36,7 @@ function Navbar(props) {
                     <LinkItems href={'/'} classes={'btn'} name={'Home'}/>
 
                     <LinkItems href={'/profile'} classes={'btn'} name={'Profile'}/>
+                    <LinkItems href={'/addpost'} classes={'btn'} name={'Add Post'}/>
 
                     <a className={'btn btn-danger'} ><FontAwesomeIcon onClick={(e) => {
 

@@ -27,7 +27,22 @@
     }
   }
 
+  .post-option {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    > ul{
+      display: none;
+      position: absolute;
+      background-color: black;
+      padding: 1rem;
+      right: 0;
+    }
+  }
+
   .card {
+    position: relative;
     max-width: 30rem;
     min-width: 20rem;
     padding: .7rem;

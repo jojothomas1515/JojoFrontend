@@ -15,7 +15,7 @@ function Home(props) {
                     <a className={'btn'}>Click Here</a>
                 </div>
             </section>
-                <Posts/>
+                <Posts link={`${process.env.REACT_APP_API}`}/>
 
 
         </>

@@ -8,6 +8,7 @@
   align-items: center;
   height: 4rem;
   transition: opacity 250ms ease-in-out;
+  z-index: 10;
 }
 .navbar:hover {
   opacity: 1 !important;

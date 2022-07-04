@@ -19,17 +19,21 @@
     box-shadow: globals.$shadow-minor-float;
 
     .form-control{
-      display: grid;
-      grid-template-columns: 1fr 3fr;
+      display: flex;
+      width: 100%;
       gap: .4rem;
       border-radius: .2rem;
       border:.1rem solid globals.$accent-color;
       padding: .4rem;
+      label{
+        color:black;
+      }
 
       input{
         border: none;
         outline: none;
         background-color: transparent;
+        color: black;
         font-size: 1.1rem;
       };
     }
