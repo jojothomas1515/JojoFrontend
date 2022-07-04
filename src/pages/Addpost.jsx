@@ -5,14 +5,8 @@ import {Editor} from "@tinymce/tinymce-react";
 import "../css/pages/addpost.css";
 
 
-
-import {initializeApp} from 'firebase';
-import {
-    getDownloadURL,
-    getStorage,
-    ref,
-    uploadBytes
-} from 'firebase/storage';
+import {initializeApp} from "firebase/app";
+import {getDownloadURL, getStorage, ref, uploadBytes} from 'firebase/storage';
 
 function Addpost(props) {
     const {accessToken} = useContext(AuthContext)
@@ -91,7 +85,9 @@ function Addpost(props) {
         <div className={"form-con"}>
             <form onSubmit={sendPost} className={'addpost-form'}>
                 <div className={'heading-con'}><input type="text" name={'heading'} placeholder={'Heading'}/></div>
-                <div className={'cover-image-select-con'}><label htmlFor="cover_image" className={'btn'}>Select Cover Image</label><input type="file" accept={'image/*'} name={'cover_image'} id={'cover_image'} style={{display:"none"}}/></div>
+                <div className={'cover-image-select-con'}><label htmlFor="cover_image" className={'btn'}>Select Cover
+                    Image</label><input type="file" accept={'image/*'} name={'cover_image'} id={'cover_image'}
+                                        style={{display: "none"}}/></div>
 
                 <div><Editor textareaName={'post_field'}
                              initialValue="<p>Insert the content of the post here.</p>"
