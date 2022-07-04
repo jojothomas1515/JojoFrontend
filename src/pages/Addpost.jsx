@@ -6,13 +6,13 @@ import "../css/pages/addpost.css";
 
 
 
-import {initializeApp} from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+import {initializeApp} from 'firebase';
 import {
     getDownloadURL,
     getStorage,
     ref,
     uploadBytes
-} from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-storage.js'
+} from 'firebase/storage';
 
 function Addpost(props) {
     const {accessToken} = useContext(AuthContext)
