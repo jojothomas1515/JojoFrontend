@@ -11,6 +11,7 @@ export const AuthContextProvider = ({children}) => {
     const [AuthToken, setAuthTokens] = useState(localStorage.getItem('AuthToken') ? JSON.parse(localStorage.getItem('AuthToken')) : null)
     const [user, setUser] = useState(localStorage.getItem('AuthToken') ? jwt_decode(JSON.parse(localStorage.getItem('AuthToken')).access) : null)
     const [loading, setLoading] = useState(true)
+
     const navigate = useNavigate()
 
     let context = {
@@ -18,7 +19,8 @@ export const AuthContextProvider = ({children}) => {
         loginUser: e => loginUser(e, setAuthTokens, setUser, navigate),
         registerUser: e => registerUser(e, setAuthTokens, setUser, navigate),
         accessToken: AuthToken?.access,
-        logout: () => logout(setAuthTokens, setUser, navigate)
+        logout: () => logout(setAuthTokens, setUser, navigate),
+
     }
    useEffect(()=>{
           if(AuthToken) updateToken(AuthToken, setAuthTokens, setUser,navigate)

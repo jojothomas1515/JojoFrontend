@@ -9,10 +9,11 @@ import Register from "./pages/Register";
 import Navbar from "./components/Navbar";
 import Profile from "./pages/Profile";
 import Addpost from "./pages/Addpost";
+import ViewPosts from "./pages/ViewPosts";
 
 
 function App() {
-
+console.log(process.env.REACT_APP_firebase_apiKey)
 
     return (
         <>
@@ -27,6 +28,7 @@ function App() {
                         <Route path={'/'} element={<Home/>} exact/>
                         <Route path={'/profile'} element={<Profile/>}></Route>
                         <Route path={'/addpost'} element={<Addpost/>}/>
+                        <Route path={'/viewpost/*'} element={<ViewPosts/>}></Route>
                     </Routes>
                 </PrivateRoutes>
 

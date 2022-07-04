@@ -1,0 +1,25 @@
+.form-con {
+  display: flex;
+  background-color: grey;
+  padding: 1rem;
+}
+
+.addpost-form {
+  width: calc(100% - 6rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+.addpost-form .heading-con input {
+  width: 100%;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+}
+.addpost-form .cover-image-select-con label {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+/*# sourceMappingURL=addpost.css.map */

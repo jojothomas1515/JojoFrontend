@@ -7,6 +7,7 @@ function Posts({link}) {
     const {accessToken, user} =  useContext(AuthContext)
     const [posts, setPosts] = useState([])
 
+
     function deletePost(id){
         fetch(`${process.env.REACT_APP_API}/removepost/${id}`, {
             method:'DELETE',
