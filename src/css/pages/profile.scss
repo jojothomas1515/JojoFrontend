@@ -121,14 +121,13 @@
   }
 }
 .form-con{
-  all:unset !important;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
   border-radius: 5px;
   box-shadow: globals.$shadow-minor-float;
-  background-color: white;
+  background-color: white !important;
 *{
   width: 100%;
 }

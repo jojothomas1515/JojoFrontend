@@ -107,14 +107,13 @@
 }
 
 .form-con {
-  all: unset !important;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
   border-radius: 5px;
   box-shadow: 0 0 0.2rem black;
-  background-color: white;
+  background-color: white !important;
 }
 .form-con * {
   width: 100%;
