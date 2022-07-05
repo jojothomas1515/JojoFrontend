@@ -29,8 +29,10 @@
     }
   }
   .editor{
+
     height: 80vh;
     border: .2rem solid globals.$accent-color;
+    border-radius: .5rem;
   }
 
 }

@@ -24,6 +24,7 @@
 .addpost-form .editor {
   height: 80vh;
   border: 0.2rem solid dodgerblue;
+  border-radius: 0.5rem;
 }
 
 /*# sourceMappingURL=addpost.css.map */
