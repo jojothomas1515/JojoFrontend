@@ -107,6 +107,7 @@
 }
 
 .form-con {
+  all: unset !important;
   display: flex;
   flex-direction: column;
   gap: 1rem;
