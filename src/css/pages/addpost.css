@@ -21,5 +21,9 @@
   display: block;
   text-align: center;
 }
+.addpost-form .editor {
+  height: 80vh;
+  border: 1rem solid dodgerblue;
+}
 
 /*# sourceMappingURL=addpost.css.map */

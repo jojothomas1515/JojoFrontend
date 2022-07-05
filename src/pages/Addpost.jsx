@@ -89,7 +89,7 @@ function Addpost(props) {
                     Image</label><input type="file" accept={'image/*'} name={'cover_image'} id={'cover_image'}
                                         style={{display: "none"}}/></div>
 
-                <div><Editor textareaName={'post_field'}
+                <div className={'editor'}><Editor textareaName={'post_field'}
                              initialValue="<p>Insert the content of the post here.</p>"
                              init={{
                                  height: "80vh",
