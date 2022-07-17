@@ -1,18 +1,23 @@
-import React, {useContext, useMemo} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {AuthContext} from "./AuthContext";
-import {Routes, useNavigate} from "react-router-dom";
+import {Routes, useMatch, useResolvedPath} from "react-router-dom";
 import {useNav} from "./NavHook";
-import {useEffect} from "react";
 
 
-
-function  IsAuth({children}) {
+function IsAuth({children}) {
     const navigate = useNav()
+    const loginResolvedPath = useResolvedPath("login")
+    const loginPath = useMatch({path: `${loginResolvedPath.pathname}`, end: true})
+    const registerResolvedPath = useResolvedPath("login")
+    const registerPath = useMatch({path: `${registerResolvedPath.pathname}`, end: true})
+
+
     const {user} = useContext(AuthContext)
-    useEffect(() =>{
-        if (user){
-            navigate('/')
+    useEffect(() => {
+        if (user && (registerPath || loginPath)) {
+            navigate("/")
         }
+
     }, [])
 
     return (
