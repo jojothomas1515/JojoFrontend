@@ -86,22 +86,28 @@ export const logout = (setAuthTokens, setUser, navigate) => {
 }
 
 export const updateToken = async (AuthToken, setAuthTokens, setUser, navigate) => {
-    const res = await fetch(`${process.env.REACT_APP_API}/api/token/refresh/`, {
-        method: 'POST',
-        body: JSON.stringify({refresh: AuthToken.refresh}),
-        headers: {
-            'Accept': 'application/json',
-            'Content-type': 'application/json'
-        }
-    })
-    let data = await res.json()
+    try{
+        const res = await fetch(`${process.env.REACT_APP_API}/api/token/refresh/`, {
+            method: 'POST',
+            body: JSON.stringify({refresh: AuthToken.refresh}),
+            headers: {
+                'Accept': 'application/json',
+                'Content-type': 'application/json'
+            }
+        })
+        let data = await res.json()
 
-    if (res.status == 200) {
-        localStorage.setItem('AuthToken', JSON.stringify(data))
-        setAuthTokens(data)
-        setUser(jwt_decode(data.access))
-    } else if (res.status == 401) {
+        if (res.status == 200) {
+            localStorage.setItem('AuthToken', JSON.stringify(data))
+            setAuthTokens(data)
+            setUser(jwt_decode(data.access))
+        } else if (res.status == 401) {
+            logout(setUser, setAuthTokens, navigate)
+        }
+    }
+    catch (err){
         logout(setUser, setAuthTokens, navigate)
     }
+
 
 }
