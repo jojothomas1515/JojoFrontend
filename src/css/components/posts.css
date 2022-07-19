@@ -51,5 +51,16 @@
   aspect-ratio: 1/1;
   object-fit: cover;
 }
+.card > a {
+  width: max-content;
+  display: block;
+}
+.card > a > div {
+  transition: all 150ms ease-in-out;
+}
+.card a:hover > div {
+  background-color: cornflowerblue;
+  box-shadow: 0 0 0.2rem black;
+}
 
 /*# sourceMappingURL=posts.css.map */

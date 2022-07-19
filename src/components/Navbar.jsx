@@ -25,6 +25,7 @@ function Navbar(props) {
         }
         , [])
     return (
+        <>
         <div className={'navbar'}>
             <h2>{process.env.REACT_APP_LOGO_TITLE}</h2>
 
@@ -45,6 +46,7 @@ function Navbar(props) {
                 </ul>
             </nav>
         </div>
+            </>
     );
 }
 

@@ -40,6 +40,7 @@ function Posts({link}) {
     }, [])
 
     return (
+
         <section className="posts-feed contain">
             {posts.map(post => {
                 return (

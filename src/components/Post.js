@@ -1,9 +1,8 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
 import {Button} from "react-bootstrap";
-import {Markup} from "interweave";
 
 function Post({post, user, deletePost}) {
     // const optionRef = useRef()
@@ -14,14 +13,16 @@ function Post({post, user, deletePost}) {
     // }
 
     return (
-        <Link to={`viewpost/${post.id}`} key={post.id}>
+        <Link to={`/viewpost/${post.id}`} key={post.id}>
             <div className="card">
-                <div className={'profile-icon-con'}>
-                    <img className={'profile-icon-image'} src={post.profile_image}/>
-                    <p className="card-footer"> {post.author}</p>
-                </div>
+                <Link to={`/${post.author}/profile`} >
+                    <div className={'profile-icon-con'}>
+                        <img className={'profile-icon-image'} src={post.profile_image}/>
+                        <p className="card-footer"> {post.author}</p>
+                    </div>
+                </Link>
                 {post.author === user.username ? <div className={'post-option'}>
-                    <FontAwesomeIcon icon={faBars} onClick={()=>{
+                    <FontAwesomeIcon icon={faBars} onClick={() => {
                         const drpd = document.getElementById(`${post.id}`)
                         drpd.style.display === 'none' ? drpd.style.display = 'block' : drpd.style.display = 'none'
 

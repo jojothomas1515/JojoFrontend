@@ -106,6 +106,7 @@ export const updateToken = async (AuthToken, setAuthTokens, setUser, navigate) =
         }
     }
     catch (err){
+        alert('api service is down, you\'ve been logged out')
         logout(setUser, setAuthTokens, navigate)
     }
 

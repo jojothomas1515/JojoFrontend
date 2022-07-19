@@ -63,3 +63,18 @@
     }
   }
 }
+.card{
+  >a{
+    width: max-content;
+    display: block;
+    > div{
+      transition: all 150ms ease-in-out ;
+    }
+
+  }
+  a:hover{
+    >div{ background-color: cornflowerblue;
+    box-shadow: globals.$shadow-minor-float}
+
+  }
+}
